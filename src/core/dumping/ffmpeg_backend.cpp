@@ -956,9 +956,11 @@ std::string FormatDefaultValue(const AVOption* option,
     case AV_OPT_TYPE_VIDEO_RATE: {
         return ToStdString(option->default_val.str);
     }
+#ifdef AV_OPT_TYPE_CHANNEL_LAYOUT
     case AV_OPT_TYPE_CHANNEL_LAYOUT: {
         return fmt::format("{:#x}", option->default_val.i64);
     }
+#endif
     default:
         return "";
     }
