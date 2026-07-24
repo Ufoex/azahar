@@ -302,6 +302,11 @@ private slots:
     void OnStartVideoDumping();
     void StartVideoDumping(const QString& path);
     void OnStopVideoDumping();
+#ifdef ENABLE_NETWORK_STREAMING
+    void OnNetworkStreaming();
+    void StartNetworkStreaming();
+    void StopNetworkStreaming();
+#endif
     void OnCoreError(Core::System::ResultStatus, std::string);
     /// Called whenever a user selects Help->About Azahar
     void OnMenuAboutCitra();
